@@ -14,22 +14,23 @@
     <!-- Header portion-->
     <header>
         <img class="logo" src="assets/images/logo.png" alt="Logo">
-        <h1 class="heading"> Rock, Paper, Scissors, Lizard, Spock</h1>
         <div id="menu-container">
             <!--Instructions and GitHub-->
-            <input class="btn instructions-button" type="button" value="Instructions">
+            <input class="btn-git" type="button" value="Instructions">
             <a href="https://github.com/mpysys/rock-paper-scissors-lizard-spock" class="btn-git" tabindex="-1" role="button"
                 aria-disabled="true" target="_blank">GitHub link</a>
         </div>
+        <h1 class="heading"> Rock, Paper, Scissors, Lizard, Spock</h1>
+        
     </header>
+      <!-- secondary score area-->
+      <div class="score-area">
+        <p class="scores" >Won: <span id="win">0</span></p>
+        <p class="scores">Lost: <span id="lose">0</span></p>
+        <p class="scores">Draw: <span id="draw">0</span></p>
+    </div>
     <!-- Game Area with all relevant functionality to game object-->
     <div class="game-area">
-        <!-- current score-->
-        <div class="result-area">
-            <span id="computer-result">0</span>
-            <span> : </span>
-            <span id="player-result">0</span>
-        </div>
         <!-- Selected choice from user and computer-->
         <div class = "choice-area">
             <!-- player choice-->
@@ -62,12 +63,7 @@
             </button>
         </div>
     </div>
-    <!-- secondary score area-->
-    <div class="score-area">
-        <p class="scores" >Won: <span id="win">0</span></p>
-        <p class="scores">Lost: <span id="lose">0</span></p>
-        <p class="scores">Draw: <span id="draw">0</span></p>
-    </div>
+    
     <footer>
         <ul class="social-networks">
             <li><a href="https://www.facebook.com/mmdaghe/" target="_blank" rel="noreferrer"><i class="fab fa-facebook"></i></a></li>

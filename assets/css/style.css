@@ -24,7 +24,7 @@ body {
 }
 
 #menu-container {
-	text-align: center;
+	text-align: right;
 }
 
 /* --------- Game layout */
@@ -120,12 +120,12 @@ body {
 .btn-git {
 	width: 130px;
 	background-color: #96AFC0;
-	border: 0;
+	border: 1px solid #505AB0;
 	padding: 5px 5px;
 	font-size: 20px;
-	margin: 11px 3px 3px 3px;
+    color: #505AB0;
+	margin: auto;
     text-decoration: none;
-    color: currentColor;
     cursor: pointer;
     opacity: 0.5;
     text-decoration: none;
