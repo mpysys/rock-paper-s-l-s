@@ -14,17 +14,28 @@
     <h1 class="heading">
         <img class="logo" src="assets/images/logo.png" alt="Logo"> Rock, Paper, Scissors, Lizard, Spock
     </h1>
-
+    <div id="menu-container">
+        <!--Instructions and GitHub-->
+        <input class="btn instructions-button" type="button" value="Instructions">
+        <a href="https://github.com/mpysys/rock-paper-scissors-lizard-spock" class="btn-git" tabindex="-1" role="button"
+            aria-disabled="true" target="_blank">GitHub link</a>
+    </div>
     <div class="game-area">
-        
         <div class="result-area">
             <span id="computer-result">0</span>
             <span> : </span>
             <span id="player-result">0</span>
         </div>
         <div class = "choice-area">
-            <span id="computer-choice"><img class="choice" src="assets/images/Lizard.png" alt="choice"></span>
-            <span id="player-choice"><img class="choice" src="assets/images/Spock.png" alt="choice"></span>
+            <div id="player-choice">
+                <span>Your choice:</span>
+                <img class="choice" src="assets/images/Spock.png" alt="choice">
+            </div>
+            <div id="computer-choice">
+                <span >Computer's choice:</span>
+                <img class="choice" src="assets/images/Lizard.png" alt="choice">
+            </div>
+            
         </div>
         <div class="controls-area">
             <button data-type="rock" class="btn btn--big btn--green">
