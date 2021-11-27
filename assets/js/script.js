@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(){
             } else {
                 let gameType = this.getAttribute("data-type");
                 gameStart(gameType);
-                alert('check it again');
+                computeStart();
             }
         });
     };
@@ -19,9 +19,17 @@ document.addEventListener("DOMContentLoaded", function(){
  * The main game "loop", called when the script is first loaded 
  * and after the user's answer has been processed  
  */
-function gameStart() {
-
+ function gameStart(gameType) {
+    options = document.querySelectorAll('.choice');
+    options.forEach(function(element){
+        element.classList.add('hidden');
+    });
+    document.getElementById(gameType).classList.remove('hidden');
 }
+function computeStart() {
+    console.log('computer plays');
+}
+
 
 /** 
  * The function that will check what the user clicks and submits it as 
