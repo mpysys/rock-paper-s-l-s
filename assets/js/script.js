@@ -26,17 +26,30 @@ document.addEventListener("DOMContentLoaded", function(){
     });
     document.getElementById(gameType).classList.remove('hidden');
 }
+/**
+ * The function where the computer generates a random number between 1 and 5
+ * and determines the output value
+ */
 function computeStart() {
-    console.log('computer plays');
+    let computerChoice = Math.floor(Math.random() * 5 + 1);
+    let cpuChoice = document.querySelectorAll('.computer-choice');
+    cpuChoice.forEach(function(element){
+        element.classList.add('hidden');
+    });
+    document.getElementById(cpuChoice).classList.remove('hidden');
 }
 
 
+function displayAnswer(computerChoice){
+
+}
+
 /** 
- * The function that will check what the user clicks and submits it as 
- * the users choice
+ * The function that will check what the user submits and compares
+ * it to the computer response to determine win state
  */
-function getUserChoice(target){
-    console.log(target);
+function winState(gameStart, computeStart){
+   
 };
 
 function Rules() {
@@ -57,4 +70,6 @@ function Rules() {
                 backdrop: `rgba(0,0,0,0.5)`,
             });
 }
+
+
 

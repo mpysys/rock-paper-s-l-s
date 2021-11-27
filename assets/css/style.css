@@ -70,6 +70,11 @@ body {
     margin-top: 50px;
 }
 
+.computer-choice{
+    display: block;
+    margin-top: 50px;
+}
+
 .hidden {
     display: none;
 }
