@@ -11,32 +11,39 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 class="heading">
-        <img class="logo" src="assets/images/logo.png" alt="Logo"> Rock, Paper, Scissors, Lizard, Spock
-    </h1>
-    <div id="menu-container">
-        <!--Instructions and GitHub-->
-        <input class="btn instructions-button" type="button" value="Instructions">
-        <a href="https://github.com/mpysys/rock-paper-scissors-lizard-spock" class="btn-git" tabindex="-1" role="button"
-            aria-disabled="true" target="_blank">GitHub link</a>
-    </div>
+    <!-- Header portion-->
+    <header>
+        <img class="logo" src="assets/images/logo.png" alt="Logo">
+        <h1 class="heading"> Rock, Paper, Scissors, Lizard, Spock</h1>
+        <div id="menu-container">
+            <!--Instructions and GitHub-->
+            <input class="btn instructions-button" type="button" value="Instructions">
+            <a href="https://github.com/mpysys/rock-paper-scissors-lizard-spock" class="btn-git" tabindex="-1" role="button"
+                aria-disabled="true" target="_blank">GitHub link</a>
+        </div>
+    </header>
+    <!-- Game Area with all relevant functionality to game object-->
     <div class="game-area">
+        <!-- current score-->
         <div class="result-area">
             <span id="computer-result">0</span>
             <span> : </span>
             <span id="player-result">0</span>
         </div>
+        <!-- Selected choice from user and computer-->
         <div class = "choice-area">
+            <!-- player choice-->
             <div id="player-choice">
                 <span>Your choice:</span>
                 <img class="choice" src="assets/images/Spock.png" alt="choice">
             </div>
+            <!-- computer choice-->
             <div id="computer-choice">
                 <span >Computer's choice:</span>
                 <img class="choice" src="assets/images/Lizard.png" alt="choice">
             </div>
-            
         </div>
+        <!-- Sign selection area for rounds-->
         <div class="controls-area">
             <button data-type="rock" class="btn btn--big btn--green">
                 <i class="fas fa-hand-rock"></i>
@@ -55,12 +62,27 @@
             </button>
         </div>
     </div>
-
+    <!-- secondary score area-->
     <div class="score-area">
         <p class="scores" >Won: <span id="win">0</span></p>
         <p class="scores">Lost: <span id="lose">0</span></p>
         <p class="scores">Draw: <span id="draw">0</span></p>
     </div>
+    <footer>
+        <ul class="social-networks">
+            <li><a href="https://www.facebook.com/mmdaghe/" target="_blank" rel="noreferrer"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/monnetmorgan" target="_blank" rel="noreferrer"><i class="fab fa-twitter-square"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCDb7-70Bwh5gAKwazSELC5w" target="_blank" rel="noreferrer"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://github.com/mpysys" target="_blank" rel="noreferrer"><i class="fab fa-github"></i></a></li>
+        </ul>
+  
+        <!-- FOOTNOTE SECTION -->
+  
+        <div class="footnote">
+          Morgan Monnet <span class="highlight">©2021</span>
+  
+        </div>
+      </footer>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
