@@ -69,6 +69,11 @@ body {
     display: block;
     margin-top: 50px;
 }
+
+.hidden {
+    display: none;
+}
+
 #player-choice {
     float: left;
     padding-left: 25%;
@@ -91,6 +96,8 @@ body {
     margin: 30px auto;
     top: 20%;
 }
+
+/* scores */
 
 #win {
     color: green;
