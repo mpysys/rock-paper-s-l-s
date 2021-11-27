@@ -13,14 +13,13 @@
 <body>
     <!-- Header portion-->
     <header>
-        <img class="logo" src="assets/images/logo.png" alt="Logo">
         <div id="menu-container">
             <!--Instructions and GitHub-->
-            <input class="btn-git" type="button" value="Instructions">
-            <a href="https://github.com/mpysys/rock-paper-scissors-lizard-spock" class="btn-git" tabindex="-1" role="button"
-                aria-disabled="true" target="_blank">GitHub link</a>
+            <input class="btn-git" type="button" value="Rules">
         </div>
-        <h1 class="heading"> Rock, Paper, Scissors, Lizard, Spock</h1>
+        <img class="logo" src="assets/images/logo.png" alt="Logo"> 
+        <h1 class="heading">Rock, Paper, Scissors, Lizard, Spock</h1>
+        
         
     </header>
       <!-- secondary score area-->
@@ -35,33 +34,33 @@
         <div class = "choice-area">
             <!-- player choice-->
             <div id="player-choice">
-                <span>Your choice:</span>
-                <img class="choice" src="assets/images/Spock.png" alt="choice">
+                <div>Your choice:</div>
+                <img class="choice" src="assets/images/spock.png" alt="choice">
             </div>
             <!-- computer choice-->
             <div id="computer-choice">
-                <span >Computer's choice:</span>
-                <img class="choice" src="assets/images/Lizard.png" alt="choice">
+                <div>Computer choice:</div>
+                <img class="choice" src="assets/images/lizard.png" alt="choice">
             </div>
         </div>
-        <!-- Sign selection area for rounds-->
-        <div class="controls-area">
-            <button data-type="rock" class="btn btn--big btn--green">
-                <i class="fas fa-hand-rock"></i>
-            </button>
-            <button data-type="paper" class="btn btn--big btn--blue">
-                <i class="fas fa-hand-paper"></i>
-            </button>
-            <button data-type="scissor" class="btn btn--big btn--orange">
-                <i class="fas fa-hand-scissors"></i>
-            </button>
-            <button data-type="lizard" class="btn btn--big btn--red">
-                <i class="fas fa-hand-lizard"></i>
-            </button>
-            <button data-type="spock" class="btn btn--big btn--red">
-                <i class="fas fa-hand-spock"></i>
-            </button>
-        </div>
+    </div>
+    <!-- Sign selection area for rounds-->
+    <div class="controls-area">
+        <button data-type="rock" class="btn btn--big btn--orange">
+            <i class="fas fa-hand-rock"></i>
+        </button>
+        <button data-type="paper" class="btn btn--big btn--yellow">
+            <i class="fas fa-hand-paper"></i>
+        </button>
+        <button data-type="scissor" class="btn btn--big btn--pink">
+            <i class="fas fa-hand-scissors"></i>
+        </button>
+        <button data-type="lizard" class="btn btn--big btn--green">
+            <i class="fas fa-hand-lizard"></i>
+        </button>
+        <button data-type="spock" class="btn btn--big btn--blue">
+            <i class="fas fa-hand-spock"></i>
+        </button>
     </div>
     
     <footer>
