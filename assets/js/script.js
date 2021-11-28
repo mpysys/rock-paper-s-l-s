@@ -1,9 +1,14 @@
+// global variables and rules
+
 var userChoice;
 var computerChoice;
 var win = 0;
 var lose = 0;
 var draw = 0;
-var gestures = ['computer-rock', 'computer-paper', 'computer-scissors', 'computer-lizard', 'computer-spock'];
+var gestures = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+
+
+
 
 // wait for the DOM to finish loading before running the game
 // get the button elements and add event listeners to them
@@ -18,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 let gameType = this.getAttribute("data-type");
                 gameStart(gameType);
                 computeStart();
+                winState(userChoice,computerChoice);
             }
         });
     };
@@ -39,27 +45,51 @@ document.addEventListener("DOMContentLoaded", function(){
  * and determines the output value
  */
 function computeStart() {
-    randomSelect = gestures[Math.floor(Math.random() * 5 )];
-    computerChoice = randomSelect;
+    let index = Math.floor(Math.random() * gestures.length);
+    computerChoice = gestures[index];
     displayAnswer(computerChoice);
 }
 
 
+/**
+ * 
+ * The function to display the computer's choice
+ */
+
 function displayAnswer(computerChoice){
-    computerSelection = document.querySelectorAll('.computer-choice');
-    computerSelection.forEach(function(element){
+    let allChoices = document.querySelectorAll('.computer-choice');
+    allChoices.forEach(function(element){
         element.classList.add('hidden');
+        if (element.id === computerChoice){
+            element.classList.remove('hidden');
+        }
     });
-    document.getElementById(computerChoice).classList.remove('hidden');
+    
+    console.log(userChoice);
+    console.log(computerChoice)
 }
+
 
 /** 
  * The function that will check what the user submits and compares
  * it to the computer response to determine win state
  */
-function winState(gameStart, computeStart){
-   
-};
+function winState(userChoice, computerChoice){
+    let defeatedBy = [];
+    defeatedBy['rock'] = ['spock', 'paper'];
+    defeatedBy['paper'] = ['scissors', 'lizard'],
+    defeatedBy['scissors'] = ['spock', 'rock'],
+    defeatedBy['lizard'] = ['rock', 'scissors'],
+    defeatedBy['spock'] = ['lizard', 'paper'];
+
+    if(defeatedBy[userChoice].includes(computerChoice)){
+        console.log('computer wins')
+   } else if(defeatedBy[computerChoice].includes(userChoice)){
+        console.log('user wins')
+   } else {
+    console.log('draw')
+   }
+}
 
 function Rules() {
             Swal.fire({
