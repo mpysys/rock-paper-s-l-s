@@ -92,6 +92,7 @@ function winState(userChoice, computerChoice){
     console.log('draw');
     incrementDraw();
    }
+   increaseRoundNumber();
 }
 
 
@@ -111,9 +112,24 @@ function incrementLoss(){
     document.getElementById("lose").innerText = ++oldScore;
 }
 
+/**
+ * Gets the current tally of draws from the DOM and increments it by 1
+ */
 function incrementDraw(){
     let oldScore = parseInt(document.getElementById("draw").innerText);
     document.getElementById("draw").innerText = ++oldScore;
+}
+
+/**
+ * Increases the number of rounds to 10 then resets to 0
+ */
+ function increaseRoundNumber() {
+    let roundNumber = parseInt(document.getElementById("round").innerText);
+    if (roundNumber < 11) {
+        document.getElementById("round").innerText = ++roundNumber;
+    } else {
+        resetScore();
+    }
 }
 
 
