@@ -9,6 +9,13 @@ var gestures = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
 var playerMessage = document.getElementById("player-message");
 var computerMessage = document.getElementById("computer-message");
 var outcomeMessage = document.getElementById("outcome");
+var defeatedBy = [];
+defeatedBy['rock'] = ['spock', 'paper'];
+defeatedBy['paper'] = ['scissors', 'lizard'],
+defeatedBy['scissors'] = ['spock', 'rock'],
+defeatedBy['lizard'] = ['rock', 'scissors'],
+defeatedBy['spock'] = ['lizard', 'paper'];
+
 
 
 
@@ -22,14 +29,25 @@ document.addEventListener("DOMContentLoaded", function(){
         button.addEventListener("click", function(){
             if (this.getAttribute("data-type") === "instructions") {
                 displayRules();
+            } else if (this.getAttribute("data-type") === "restart") {
+                restart();
             } else {
+                document.getElementsByClassName('result-detail')[0].classList.add('hidden');
                 let gameType = this.getAttribute("data-type");
                 playerSelection(gameType);
                 computeStart();
+
             }
         });
     };
 })
+
+/**
+ * 
+ * The function to start playing 
+ */
+
+
 /** 
  * The main game "loop", called when the script is first loaded 
  * and after the user's answer has been processed  
@@ -39,7 +57,10 @@ document.addEventListener("DOMContentLoaded", function(){
     options.forEach(function(element){
         element.classList.add('hidden');
     });
-    document.getElementsByClassName('player choice '+gameType)[0].classList.remove('hidden');
+    let image = document.getElementsByClassName('player choice '+gameType)[0];
+    if (image){
+        image.classList.remove('hidden');
+    }
     userChoice = gameType;
 }
 /**
@@ -97,12 +118,6 @@ function spinAnswer(allChoices){
  * it to the computer response to determine win state
  */
 function winState(userChoice, computerChoice){
-    let defeatedBy = [];
-    defeatedBy['rock'] = ['spock', 'paper'];
-    defeatedBy['paper'] = ['scissors', 'lizard'],
-    defeatedBy['scissors'] = ['spock', 'rock'],
-    defeatedBy['lizard'] = ['rock', 'scissors'],
-    defeatedBy['spock'] = ['lizard', 'paper'];
 
     if(defeatedBy[userChoice].includes(computerChoice)){
         displayResults("You Lose 😡","#ffdde0", "Large");
@@ -115,7 +130,6 @@ function winState(userChoice, computerChoice){
     incrementDraw();
    }
    increaseRoundNumber();
-   increaseGameCount();
 }
 
 /**
@@ -157,42 +171,25 @@ function incrementDraw(){
  */
  function increaseRoundNumber() {
     let roundNumber = parseInt(document.getElementById("round").innerText);
-    if (roundNumber < 10) {
-        document.getElementById("round").innerText = ++roundNumber;
-    } else {
-        document.getElementById("win").innerText = 0;
-        document.getElementById("lose").innerText = 0;
-        document.getElementById("draw").innerText = 0;
-        document.getElementById("round").innerText = 0;
-    }
+    document.getElementById("round").innerText = ++roundNumber;
 }
 
-/** 
- * Increase the game count once 10 rounds were played
- */
- function increaseGameCount() {
-    let gameCount = parseInt(document.getElementById("game").innerText);
-    let roundNumber = parseInt(document.getElementById("round").innerText);
-    if (roundNumber === 10) {
-        document.getElementById("game").innerText = ++gameCount;
-    } 
- }
+
 /**
  * Restart Button , Resets scores to 0, can be used mid game.
  */
 
-document.querySelector(".restart").addEventListener("click", function () {
+function restart() {
     document.getElementById("win").innerText = 0;
     document.getElementById("lose").innerText = 0;
     document.getElementById("draw").innerText = 0;
     document.getElementById("round").innerText = 0;
-    document.getElementById("game").innerText = 0;
     document.getElementsByClassName('result-detail')[0].classList.add('hidden')
     let allChoices = document.querySelectorAll('.choice');
     allChoices.forEach(function(element){
         element.classList.add('hidden');
     });
-});
+}
 
 function displayRules() {
             Swal.fire({
