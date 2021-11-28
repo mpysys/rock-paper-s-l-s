@@ -172,15 +172,17 @@ function Rules() {
                 html:
                     "<p><b>Rock, Paper, Scissors, Lizard, Spock is an expansion of the classical Rock, Paper, Scissors game</b></p>" +
                     "<p><b>You might have seen this game on the the hit TV series <a href='https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock' target='_blank'>The Big Bang Theory</a>.</b></p>" +
-                    "<p><b>To play the game simply click on Rock, Paper, Scissors, Lizard or Spock. Once you've made your choice the computer will then pick their choice.</b></p>" +
-                    "<ul><ol>Rock smashes Scissors</ol><ol>Rock cruses Lizard</ol><ol>Paper covers Rock</ol><ol>Paper disproves Spock</ol><ol>Scissors cuts Paper</ol><ol>Scissors decapitates Lizard</ol><ol>Lizard eats Paper</ol><ol>Lizard poisons Spock</ol><ol>Spock vaporizes Rock</ol><ol>Spock smashes Scissors</ol></ul>" +
+                    "<p><b>To play the game simply click on Rock, Paper, Scissors, Lizard or Spock below the game area. Once you've made your choice the computer will then pick their choice.</b></p>" +
                     "<p><b>Then depending on the out come you will receive a win, lose or draw</b></p>",
+                imageUrl: './assets/images/logo.png',
+                imageHeight: 250,
+                imageAlt: 'A tall image',
                 confirmButtonText: `Lets Play`,
                 confirmButtonColor: '#96AFC0',
                 allowOutsideClick: true,
                 width: 600,
                 padding: '2em',
-                background: '#DCDCDC',
+                background: '#d9e2e9',
                 backdrop: `rgba(0,0,0,0.5)`,
             });
 }
