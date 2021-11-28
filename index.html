@@ -18,7 +18,7 @@
         <div id="menu-container">
             <!--Instructions and GitHub-->
             <button data-type="instructions" class="btn-git" type="button" value="Rules">Rules</button>
-            <button data-type="restart" class="btn-git" type="button" value="restart">Restart</button>
+            <button data-type="restart" class="restart" type="button" value="restart">Restart</button>
         </div>
         <img class="logo" src="assets/images/logo.png" alt="Logo"> 
         <h1 class="heading">Rock, Paper, Scissors, Lizard, Spock</h1>
@@ -39,24 +39,24 @@
         <div class = "choice-area">
             <!-- player choice-->
             <div id="player-choice">
-                <div>Your choice:</div>
-                <img class="choice hidden" src="assets/images/spock.png" alt="choice" id="spock">
-                <img class="choice hidden" src="assets/images/paper.png" alt="choice" id="paper">
-                <img class="choice hidden" src="assets/images/lizard.png" alt="choice" id="lizard">
-                <img class="choice hidden" src="assets/images/rock.png" alt="choice" id="rock">
-                <img class="choice hidden" src="assets/images/scissor.png" alt="choice" id="scissors">
+                <div>PLAYER</div>
+                <img class="player choice hidden spock" src="assets/images/spock.png" alt="choice">
+                <img class="player choice hidden paper" src="assets/images/paper.png" alt="choice">
+                <img class="player choice hidden lizard" src="assets/images/lizard.png" alt="choice">
+                <img class="player choice hidden rock" src="assets/images/rock.png" alt="choice">
+                <img class="player choice hidden scissors" src="assets/images/scissor.png" alt="choice">
             </div>
             <!-- computer choice-->
             <div id="opponent-choice">
-                <div>Computer choice:</div>
-                <img class="computer-choice hidden" src="assets/images/spock.png" alt="choice" id="spock">
-                <img class="computer-choice hidden" src="assets/images/paper.png" alt="choice" id="paper">
-                <img class="computer-choice hidden" src="assets/images/lizard.png" alt="choice" id="lizard">
-                <img class="computer-choice hidden" src="assets/images/rock.png" alt="choice" id="rock">
-                <img class="computer-choice hidden" src="assets/images/scissor.png" alt="choice" id="scissors">
+                <div>COMPUTER</div>
+                <img class="computer choice hidden spock" src="assets/images/spock.png" alt="choice">
+                <img class="computer choice hidden paper" src="assets/images/paper.png" alt="choice">
+                <img class="computer choice hidden lizard" src="assets/images/lizard.png" alt="choice">
+                <img class="computer choice hidden rock" src="assets/images/rock.png" alt="choice">
+                <img class="computer choice hidden scissors" src="assets/images/scissor.png" alt="choice">
             </div>
             <!-- result message Area-->
-            <div class="result-detail">
+            <div class="result-detail hidden">
                 <p id="player-message"></p>
                 <p id="computer-message"></p>
                 <p id="outcome"></p>

@@ -21,12 +21,11 @@ document.addEventListener("DOMContentLoaded", function(){
     for (let button of buttons){
         button.addEventListener("click", function(){
             if (this.getAttribute("data-type") === "instructions") {
-                Rules();
+                displayRules();
             } else {
                 let gameType = this.getAttribute("data-type");
-                gameStart(gameType);
+                playerSelection(gameType);
                 computeStart();
-                winState(userChoice,computerChoice);
             }
         });
     };
@@ -35,12 +34,12 @@ document.addEventListener("DOMContentLoaded", function(){
  * The main game "loop", called when the script is first loaded 
  * and after the user's answer has been processed  
  */
- function gameStart(gameType) {
+ function playerSelection(gameType) {
     options = document.querySelectorAll('.choice');
     options.forEach(function(element){
         element.classList.add('hidden');
     });
-    document.getElementById(gameType).classList.remove('hidden');
+    document.getElementsByClassName('player choice '+gameType)[0].classList.remove('hidden');
     userChoice = gameType;
 }
 /**
@@ -60,17 +59,38 @@ function computeStart() {
  */
 
 function displayAnswer(computerChoice){
-    let allChoices = document.querySelectorAll('.computer-choice');
-    allChoices.forEach(function(element){
-        element.classList.add('hidden');
-        if (element.id === computerChoice){
-            element.classList.remove('hidden');
-        }
-    });
-    computerMessage.innerHTML = `Computer Chose <b>${computerChoice}</b>`;
-    playerMessage.innerHTML =`User Chose <b>${userChoice}</b>`
+    let allChoices = document.querySelectorAll('.computer.choice');
+    nbspin = 0;
+    spinAnswer(allChoices);
 }
 
+function finishAnswer(){
+    let allChoices = document.querySelectorAll('.computer.choice');
+    allChoices.forEach(function(element){
+        element.classList.add('hidden');
+    });
+    document.getElementsByClassName('computer choice '+computerChoice)[0].classList.remove('hidden');
+    computerMessage.innerHTML = `Computer chose <b>${computerChoice}</b>`;
+    playerMessage.innerHTML =`User chose <b>${userChoice}</b>`;
+    winState(userChoice,computerChoice);
+}
+
+var nbspin = 0;
+
+function spinAnswer(allChoices){
+    setTimeout(function(){
+        allChoices.forEach(function(element){
+            element.classList.add('hidden');
+        });
+        allChoices[nbspin % allChoices.length].classList.remove('hidden');
+        nbspin++;
+        if (nbspin < 10) {
+            spinAnswer(allChoices);
+        } else {
+            finishAnswer();
+        }
+    }, 100);
+}
 
 /** 
  * The function that will check what the user submits and compares
@@ -85,25 +105,28 @@ function winState(userChoice, computerChoice){
     defeatedBy['spock'] = ['lizard', 'paper'];
 
     if(defeatedBy[userChoice].includes(computerChoice)){
-        outcomeMessage.innerHTML = "You Lose 😡";
-        outcomeMessage.style.background = ("#ffdde0")
-		outcomeMessage.style.fontSize = "Large";
+        displayResults("You Lose 😡","#ffdde0", "Large");
         incrementLoss();
    } else if(defeatedBy[computerChoice].includes(userChoice)){
-        outcomeMessage.innerHTML = "You Win 😃";
-        outcomeMessage.style.background = ("#cefdce");
-		outcomeMessage.style.fontSize = "Large";
+        displayResults("You Win 😃","#cefdce","Large");
         incrementWin();
    } else {
-    outcomeMessage.innerHTML = "It's a Draw";
-    outcomeMessage.style.background = ("none");
-	outcomeMessage.style.fontSize = "Large";
+    displayResults("It's a Draw","none","Large");
     incrementDraw();
    }
    increaseRoundNumber();
    increaseGameCount();
 }
 
+/**
+ * display results styling
+ */
+function displayResults(text, color, size){
+    outcomeMessage.innerHTML = text;
+    outcomeMessage.style.background = color;
+    outcomeMessage.style.fontSize = size;
+    document.getElementsByClassName('result-detail')[0].classList.remove('hidden');
+}
 
 /**
  * Gets the current score from the DOM and increments it by 1
@@ -164,9 +187,14 @@ document.querySelector(".restart").addEventListener("click", function () {
     document.getElementById("draw").innerText = 0;
     document.getElementById("round").innerText = 0;
     document.getElementById("game").innerText = 0;
+    document.getElementsByClassName('result-detail')[0].classList.add('hidden')
+    let allChoices = document.querySelectorAll('.choice');
+    allChoices.forEach(function(element){
+        element.classList.add('hidden');
+    });
 });
 
-function Rules() {
+function displayRules() {
             Swal.fire({
                 title: 'Game Rules',
                 html:
