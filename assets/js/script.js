@@ -6,9 +6,9 @@ var win = 0;
 var lose = 0;
 var draw = 0;
 var gestures = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
-const playerMessage = document.getElementById("player-message");
-const computerMessage = document.getElementById("computer-message");
-const outcomeMessage = document.getElementById("outcome");
+var playerMessage = document.getElementById("player-message");
+var computerMessage = document.getElementById("computer-message");
+var outcomeMessage = document.getElementById("outcome");
 
 
 

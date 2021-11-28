@@ -171,20 +171,6 @@ body {
     text-decoration: none;
 }
 
-.restart {
-    width: 130px;
-    font-size: 0.5rem;
-    font-family: "Roboto", sans-serif;
-	background-color: #96AFC0;
-	border: 1px solid #505AB0;
-	padding: 5px 5px 5px;
-	font-size: 20px;
-    color: white;
-	margin: auto;
-    text-decoration: none;
-    cursor: pointer;
-    text-decoration: none;
-}
 
 
 .btn:focus {
@@ -335,6 +321,13 @@ footer .footnote .highlight {
         left: -0.7rem;
     }
 
+    .btn-git {
+        width: 100%;
+    }
+
+    #menu-container {
+        margin-bottom: 15px;
+    }
     .question-area {
         padding: 10% 0;
         width: 100%;
@@ -361,14 +354,20 @@ footer .footnote .highlight {
     }
 
     .scores {
-        margin: 0.5em auto;
-        display: block;
-        padding: 5px;
+        margin: 0.5em auto;      
     }
 
     .heading {
-        font-size: 2rem;
+        font-size: 1rem;
     }
+
+    .logo {
+        width: 10%;
+        height: 10%;
+    }
+    #player-choice, #opponent-choice {
+        display: none;
+   } 
 }
 
 @media (max-width: 320px) {
@@ -377,8 +376,12 @@ footer .footnote .highlight {
     }
 
     .controls-area {
-        width: 75%;
+        width: 100%;
         margin: 10px auto;
+    }
+
+    .heading {
+        font-size: 0.5rem;
     }
 
     .btn--big {
@@ -388,4 +391,12 @@ footer .footnote .highlight {
         padding: 10px 0;
     }
 
+   #player-choice, #opponent-choice {
+        display: none;
+   } 
+
+   .result-detail {
+        display:inline-block;
+        vertical-align:middle;
+   }
 }
