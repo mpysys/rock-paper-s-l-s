@@ -139,12 +139,12 @@ function incrementDraw(){
  * Restart Button , Resets scores to 0, can be used mid game.
  */
 
- document.querySelector(".restart").addEventListener("click", function () {
+document.querySelector(".restart").addEventListener("click", function () {
     document.getElementById("win").innerText = 0;
     document.getElementById("lose").innerText = 0;
     document.getElementById("draw").innerText = 0;
     document.getElementById("round").innerText = 0;
-}
+});
 
 function Rules() {
             Swal.fire({
