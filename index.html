@@ -25,9 +25,10 @@
         
         
     </header>
-      <!-- secondary score area-->
-      <div class="round-number">Round: <span id="round">0</span></div>
+      <!-- score area-->
       <div class="score-area">
+        <div class="round-number">Game: <span id="game">0</span></div>
+        <div class="round-number">Round (best of 10): <span id="round">0</span></div>
         <p class="scores" >Won: <span id="win">0</span></p>
         <p class="scores">Lost: <span id="lose">0</span></p>
         <p class="scores">Draw: <span id="draw">0</span></p>
@@ -55,13 +56,14 @@
                 <img class="computer-choice hidden" src="assets/images/scissor.png" alt="choice" id="scissors">
             </div>
         </div>
+        <!-- result message Area-->
+        <div class="result-detail">
+            <p id="player-message"></p>
+            <p id="computer-message"></p>
+            <p id="outcome"></p>
+        </div>
     </div>
-    <!-- result message Area-->
-    <div class="result-detail">
-        <p id="player-message"></p>
-        <p id="computer-message"></p>
-        <p id="outcome"></p>
-     </div>
+    
     <!-- gesture selection area for rounds-->
     <div class="controls-area">
         <button data-type="rock" class="btn btn--big btn--orange">

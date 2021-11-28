@@ -35,6 +35,7 @@ body {
 .game-area {
     background-color: #dbe7f0c7;
     border: 2px solid #d9e2e9;
+    border-radius: 20px;
     box-sizing: border-box;
     width: 85%;
     height: 45vh;
@@ -125,6 +126,25 @@ body {
     padding: 25px;
 }
 
+.result-detail {
+	width: 100%;
+    margin-top: 80px;
+	text-align: center;
+	font-size: 1rem;
+}
+
+#outcome {
+	color: black;
+	width: 150px;
+	padding: 5px;
+	margin: 5px auto;
+	font-weight: 900;
+}
+
+#computer-message {
+	color: #505AB0;
+}
+
 /* --------- Buttons */
 
 .btn {
@@ -166,27 +186,6 @@ body {
     text-decoration: none;
 }
 
-.result-detail {
-	width: 100%;
-	margin-top: 25px;
-	text-align: center;
-	margin: 5px 0;
-	font-size: 1.5rem;
-}
-
-#outcome {
-	color: black;
-	width: 150px;
-	padding: 5px;
-	margin: 5px auto;
-	font-weight: 900;
-}
-
-#computer-message {
-	color: #505AB0;
-}
-
-/* buttons section */
 
 .btn:focus {
     outline: none;

@@ -67,8 +67,8 @@ function displayAnswer(computerChoice){
             element.classList.remove('hidden');
         }
     });
-    computerMessage.innerHTML = `Computer Chose ${computerChoice}`;
-    playerMessage.innerHTML =`User Chose ${userChoice}`
+    computerMessage.innerHTML = `Computer Chose <b>${computerChoice}</b>`;
+    playerMessage.innerHTML =`User Chose <b>${userChoice}</b>`
 }
 
 
@@ -86,12 +86,18 @@ function winState(userChoice, computerChoice){
 
     if(defeatedBy[userChoice].includes(computerChoice)){
         outcomeMessage.innerHTML = "You Lose 😡";
+        outcomeMessage.style.background = ("#ffdde0")
+		outcomeMessage.style.fontSize = "Large";
         incrementLoss();
    } else if(defeatedBy[computerChoice].includes(userChoice)){
         outcomeMessage.innerHTML = "You Win 😃";
+        outcomeMessage.style.background = ("#cefdce");
+		outcomeMessage.style.fontSize = "Large";
         incrementWin();
    } else {
-    console.log('draw');
+    outcomeMessage.innerHTML = "It's a Draw";
+    outcomeMessage.style.background = ("none");
+	outcomeMessage.style.fontSize = "Large";
     incrementDraw();
    }
    increaseRoundNumber();
