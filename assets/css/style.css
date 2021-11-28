@@ -383,10 +383,28 @@ footer .footnote .highlight {
         width: 10%;
         height: 10%;
     }
-    #player-choice, #opponent-choice {
-        display: none;
-   } 
-}
+
+   .choice {
+    height: 75px;
+    margin-top: 25px;
+    }
+
+    .choice-area {
+        margin-top: 5px;
+    }
+
+    #opponent-choice {
+        position:  absolute;
+        right: 85px;
+    }
+
+    #player-choice {
+        position: absolute;
+        left: 85px;
+        padding-left: 0;
+    }
+}   
+
 
 @media (max-width: 320px) {
     .game-area {
@@ -408,21 +426,6 @@ footer .footnote .highlight {
     .question-area {
         padding: 10px 0;
     }
-
-   #player-choice, #opponent-choice {
-        
-   } 
-
-   #player-choice {
-
-   }
-
-   #opponent-choice {
-       
-   }
-   .choice-area {
-       margin-top: 0px;
-   }
 
    .result-detail {
         display:inline-block;
