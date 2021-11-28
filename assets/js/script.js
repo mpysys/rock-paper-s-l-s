@@ -101,6 +101,7 @@ function winState(userChoice, computerChoice){
     incrementDraw();
    }
    increaseRoundNumber();
+   increaseGameCount();
 }
 
 
@@ -143,6 +144,16 @@ function incrementDraw(){
     }
 }
 
+/** 
+ * Increase the game count once 10 rounds were played
+ */
+ function increaseGameCount() {
+    let gameCount = parseInt(document.getElementById("game").innerText);
+    let roundNumber = parseInt(document.getElementById("round").innerText);
+    if (roundNumber === 10) {
+        document.getElementById("game").innerText = ++gameCount;
+    } 
+ }
 /**
  * Restart Button , Resets scores to 0, can be used mid game.
  */
@@ -152,6 +163,7 @@ document.querySelector(".restart").addEventListener("click", function () {
     document.getElementById("lose").innerText = 0;
     document.getElementById("draw").innerText = 0;
     document.getElementById("round").innerText = 0;
+    document.getElementById("game").innerText = 0;
 });
 
 function Rules() {
