@@ -31,12 +31,9 @@ document.addEventListener("DOMContentLoaded", function(){
  * and determines the output value
  */
 function computeStart() {
-    let computerChoice = Math.floor(Math.random() * 5 + 1);
-    let cpuChoice = document.querySelectorAll('.computer-choice');
-    cpuChoice.forEach(function(element){
-        element.classList.add('hidden');
-    });
-    document.getElementById(cpuChoice).classList.remove('hidden');
+    options = document.querySelectorAll('.computer-choice')
+    let randomChoice = options[(Math.floor(Math.random()* 5))];
+    
 }
 
 
