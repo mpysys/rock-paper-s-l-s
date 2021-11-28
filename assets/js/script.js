@@ -6,6 +6,9 @@ var win = 0;
 var lose = 0;
 var draw = 0;
 var gestures = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+const playerMessage = document.getElementById("player-message");
+const computerMessage = document.getElementById("computer-message");
+const outcomeMessage = document.getElementById("outcome");
 
 
 
@@ -64,9 +67,8 @@ function displayAnswer(computerChoice){
             element.classList.remove('hidden');
         }
     });
-    
-    console.log(userChoice);
-    console.log(computerChoice)
+    computerMessage.innerHTML = `Computer Chose ${computerChoice}`;
+    playerMessage.innerHTML =`User Chose ${userChoice}`
 }
 
 
@@ -83,10 +85,10 @@ function winState(userChoice, computerChoice){
     defeatedBy['spock'] = ['lizard', 'paper'];
 
     if(defeatedBy[userChoice].includes(computerChoice)){
-        console.log('computer wins');
+        outcomeMessage.innerHTML = "You Lose 😡";
         incrementLoss();
    } else if(defeatedBy[computerChoice].includes(userChoice)){
-        console.log('user wins');
+        outcomeMessage.innerHTML = "You Win 😃";
         incrementWin();
    } else {
     console.log('draw');
