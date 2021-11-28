@@ -83,13 +83,39 @@ function winState(userChoice, computerChoice){
     defeatedBy['spock'] = ['lizard', 'paper'];
 
     if(defeatedBy[userChoice].includes(computerChoice)){
-        console.log('computer wins')
+        console.log('computer wins');
+        incrementLoss();
    } else if(defeatedBy[computerChoice].includes(userChoice)){
-        console.log('user wins')
+        console.log('user wins');
+        incrementWin();
    } else {
-    console.log('draw')
+    console.log('draw');
+    incrementDraw();
    }
 }
+
+
+/**
+ * Gets the current score from the DOM and increments it by 1
+ */
+ function incrementWin(){
+    let oldScore = parseInt(document.getElementById("win").innerText);
+    document.getElementById("win").innerText = ++oldScore;
+}   
+
+/**
+ * Gets the current tally of incorrect answers from the DOM and increments it by 1
+ */
+function incrementLoss(){
+    let oldScore = parseInt(document.getElementById("lose").innerText);
+    document.getElementById("lose").innerText = ++oldScore;
+}
+
+function incrementDraw(){
+    let oldScore = parseInt(document.getElementById("draw").innerText);
+    document.getElementById("draw").innerText = ++oldScore;
+}
+
 
 function Rules() {
             Swal.fire({
