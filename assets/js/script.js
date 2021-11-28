@@ -125,13 +125,15 @@ function incrementDraw(){
  */
  function increaseRoundNumber() {
     let roundNumber = parseInt(document.getElementById("round").innerText);
-    if (roundNumber < 11) {
+    if (roundNumber < 10) {
         document.getElementById("round").innerText = ++roundNumber;
     } else {
-        resetScore();
+        document.getElementById("win").innerText = 0;
+        document.getElementById("lose").innerText = 0;
+        document.getElementById("draw").innerText = 0;
+        document.getElementById("round").innerText = 0;
     }
 }
-
 
 function Rules() {
             Swal.fire({
