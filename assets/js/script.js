@@ -1,3 +1,9 @@
+var userChoice;
+var win = 0;
+var lose = 0;
+var draw = 0;
+var gestures = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+
 // wait for the DOM to finish loading before running the game
 // get the button elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function(){
@@ -25,14 +31,13 @@ document.addEventListener("DOMContentLoaded", function(){
         element.classList.add('hidden');
     });
     document.getElementById(gameType).classList.remove('hidden');
+    userChoice = gameType;
 }
 /**
  * The function where the computer generates a random number between 1 and 5
  * and determines the output value
  */
-function computeStart() {
-    options = document.querySelectorAll('.computer-choice')
-    let randomChoice = options[(Math.floor(Math.random()* 5))];
+function computeStart(gameType) {
     
 }
 
