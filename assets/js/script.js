@@ -2,9 +2,6 @@
 
 var userChoice;
 var computerChoice;
-var win = 0;
-var lose = 0;
-var draw = 0;
 var gestures = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
 var playerMessage = document.getElementById("player-message");
 var computerMessage = document.getElementById("computer-message");
@@ -39,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
             }
         });
-    };
-})
+    }
+});
 
 /**
  * 
@@ -184,7 +181,7 @@ function restart() {
     document.getElementById("lose").innerText = 0;
     document.getElementById("draw").innerText = 0;
     document.getElementById("round").innerText = 0;
-    document.getElementsByClassName('result-detail')[0].classList.add('hidden')
+    document.getElementsByClassName('result-detail')[0].classList.add('hidden');
     let allChoices = document.querySelectorAll('.choice');
     allChoices.forEach(function(element){
         element.classList.add('hidden');
@@ -196,7 +193,7 @@ function displayRules() {
                 title: 'Game Rules',
                 html:
                     "<p><b>Rock, Paper, Scissors, Lizard, Spock is an expansion of the classical Rock, Paper, Scissors game</b></p>" +
-                    "<p><b>You might have seen this game on the the hit TV series <a href='https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock' target='_blank'>The Big Bang Theory</a>.</b></p>" +
+                    "<p><b>You might have seen this game on the hit TV series <a href='https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock' target='_blank'>The Big Bang Theory</a>.</b></p>" +
                     "<p><b>To play the game simply click on Rock, Paper, Scissors, Lizard or Spock below the game area. Once you've made your choice the computer will then pick their choice.</b></p>" +
                     "<p><b>Then depending on the out come you will receive a win, lose or draw</b></p>",
                 imageUrl: './assets/images/logo.png',

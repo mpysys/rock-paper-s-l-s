@@ -316,6 +316,10 @@ footer .footnote .highlight {
 
 
 /* --------- Media queries */
+@media (max-width: 1024px) and (min-width:667) {
+
+}
+
 
 @media (max-width: 414px) {
     .controls-area {
@@ -427,8 +431,5 @@ footer .footnote .highlight {
         padding: 10px 0;
     }
 
-   .result-detail {
-        display:inline-block;
-        vertical-align:middle;
-   }
+
 }
