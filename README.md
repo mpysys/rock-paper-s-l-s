@@ -188,6 +188,15 @@ Industry standard Validator results:
 I have also run Lighthouse test, see below results:
 ![Lighthouse performance results](./assets/readme-files/lighthouse.png)
 
+Steps taken:
+1. Clicked on all buttons (Reset, Rules, RPSLS icons)
+2. Played game at a normal pace and tried to reset at various stages to check reset function
+3. Played game fast to see if it would break anything
+4. Shared game with friends to collect additional feedback according to their phones
+5. Tried various phones and dimensions (vertical + horiztonal)
+6. Tried on Safari, Chrome and IE browsers
+
+
 ### BUGS
 Only bug at this time is related to media queries and will be addressed shortly.
 Otherwise the bugs I ran into were related to DOM .add/.remove "hidden" classes, but they have been solved.
